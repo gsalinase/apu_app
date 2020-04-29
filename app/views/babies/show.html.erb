@@ -18,7 +18,7 @@
           <h4 class="py-4">Alimentación</h4>
 
           <table class="table">
-            <thead class="thead-light">
+            <thead>
               <tr>
                 <th>Fecha</th>
                 <th>Tiempo (minutos)</th>
@@ -40,7 +40,8 @@
               </tr>
               <% end %>
             </tbody>
-          </table>
+          </table> 
+          <%= link_to 'Agregar alimentación', new_baby_breastfeeding_path(@baby), class: 'btn btn-secondary' %>
         </div>
       </div>
     </div>
