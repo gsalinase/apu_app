@@ -1,0 +1,8 @@
+<h1 class="py-4">Editar Bebé</h1>
+
+<%= render 'form', baby: @baby %>
+
+<div class="btn-group pt-4 pb-4" role="group" aria-label="Basic example">
+  <%= link_to 'Atrás', babies_path, class: 'btn btn-outline-secondary' %>
+  <%= link_to 'Ver', baby_path(@baby), class: 'btn btn-outline-secondary' %>
+</div>

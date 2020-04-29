@@ -1,0 +1,8 @@
+<h1 class="py-4">Editar Alimentación</h1>
+
+<%= render 'form', breastfeeding: @breastfeeding %>
+
+<div class="btn-group pt-4 pb-4" role="group" aria-label="Basic example">
+  <%= link_to 'Atrás', baby_breastfeedings_path(@baby), class: 'btn btn-outline-secondary' %>
+  <%= link_to 'Ver', baby_breastfeeding_path(@baby), class: 'btn btn-outline-secondary' %>
+</div>

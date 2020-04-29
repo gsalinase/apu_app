@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="py-4">Alimentación</h1>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Tiempo (minutos)</th>
+      <th>Cantidad (cc)</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+     <% @breastfeedings.each do |breastfeeding| %>
+    <tr>
+      <td><%= breastfeeding.name %></td>
+      <td><%= breastfeeding.date %></td>
+      <td><%= breastfeeding.time %></td>
+      <td><%= breastfeeding.quantity %></td>
+      <td><%= link_to 'Show', baby_breastfeeding_path(@baby, breastfeeding) %></td>
+      <td><%= link_to 'Edit', edit_baby_breastfeeding_path(@baby, breastfeeding) %></td>
+      <td>
+        <%= link_to 'Destroy', baby_breastfeeding_path(@baby, breastfeeding), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar alimentación', new_baby_breastfeeding_path(@baby), class: 'btn btn-outline-secondary'  %>

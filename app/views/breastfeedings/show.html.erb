@@ -1,0 +1,26 @@
+
+<h1 class="py-4">Alimento</h1>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Nombre Bebé</th>
+      <th>Fecha</th>
+      <th>Tiempo (minutos)</th>
+      <th>Cantidad (cc)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @breastfeeding.name%></td>
+      <td><%= @breastfeeding.date%></td>
+      <td><%= @breastfeeding.time%></td>
+      <td><%= @breastfeeding.quantity%></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="btn-group pt-4 pb-4" role="group" aria-label="Basic example">
+  <%= link_to 'Atrás', baby_breastfeedings_path(@baby), class: 'btn btn-outline-secondary' %>
+  <%= link_to 'Editar', edit_baby_breastfeeding_path(@baby), class: 'btn btn-outline-secondary' %>
+</div>

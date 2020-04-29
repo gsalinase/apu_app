@@ -1,0 +1,35 @@
+<p id="notice" role="alert"><%= notice %></p>
+
+
+<h1 class="py-4">Bebés</h1>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Nombre</th>
+      <th>Alimentación total</th>
+      <th>Alimentación hoy</th>
+      <th>Última alimentación</th>
+      <th>Tiempo total del día</th>
+      <th>Cantidad total del día (cc)</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @babies.each do |baby| %>
+    <tr>
+      <td><%= baby.name %></td>
+      <td><%= baby.total_times %></td>
+      <td><%= baby.times_today %></td>
+      <td><%= baby.last_date %></td>
+      <td><%= baby.total_time %></td>
+      <td><%= baby.total_quantity %></td>
+      <td><%= link_to 'Ver', baby_path(baby) %></td>
+      <td><%= link_to 'Editar', edit_baby_path(baby) %></td>
+      <td><%= link_to 'Eliminar', baby_path(baby), method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Agregar bebé', new_baby_path(@baby), class: 'btn btn-outline-secondary' %>

@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<div class="py-4">
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            <strong>Bebé:</strong>
+            <%= @baby.name %>
+          </button>
+        </h2>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <h4 class="py-4">Alimentación</h4>
+
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th>Fecha</th>
+                <th>Tiempo (minutos)</th>
+                <th>Cantidad (cc)</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @baby.breastfeedings.each do |breastfeeding| %>
+              <tr>
+                <td><%= breastfeeding.date %></td>
+                <td><%= breastfeeding.time %></td>
+                <td><%= breastfeeding.quantity %></td>
+                <td><%= link_to 'Ver', baby_breastfeeding_path(@baby, breastfeeding) %></td>
+                <td><%= link_to 'Editar', edit_baby_breastfeeding_path(@baby, breastfeeding) %></td>
+                <td>
+                  <%= link_to 'Eliminar', baby_breastfeeding_path(@baby, breastfeeding), method: :delete, data: { confirm: 'Estás seguro?' } %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="btn-group pt-4 pb-4" role="group" aria-label="Basic example">
+  <%= link_to 'Atrás', babies_path, class: 'btn btn-outline-secondary' %>
+  <%= link_to 'Editar', edit_baby_path(@baby), class: 'btn btn-outline-secondary' %>
+</div>

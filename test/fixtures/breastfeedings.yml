@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-04-27 21:29:04
+  time: 1
+  quatity: 1
+  baby: one
+
+two:
+  date: 2020-04-27 21:29:04
+  time: 1
+  quatity: 1
+  baby: two
